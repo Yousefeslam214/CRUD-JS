@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>main</title>
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- Render All Elements Normally -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <!-- Font Awesome Library -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600;700;800&#038;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+<body>
+  <div class="crud">
+    <div class="head">
+      <h2>CRUD</h2>
+      <p>PRODUCT MANAGEMENT SYSTEM</p>
+    </div>
+    <div class="inputs">
+      <input type="text" placeholder="title" id="title">
+      <div class="price-fields">
+        <input type="number" placeholder="price" id="price">
+        <input type="number" placeholder="taxies" id="taxies">
+        <input type="number" placeholder="ads" id="ads">
+        <input type="number" placeholder="discount" id="discount">
+        <small id="total">231413</small>
+      </div>
+        <input type="number" id="count" placeholder="count">
+        <input type="text" id="category" placeholder="category">
+        <button id="create">Create</button>
+    </div>
+    <div class="outputs">
+      <div class="searchBox">
+        <input type="text" id="search" placeholder="search">
+        <div class="btnSearch">
+          <button id="searchTitle">Search By Title</button>
+          <button id="searchCategory">Search By Category</button>
+        </div>
+      </div>
+      <table>
+        <tr>
+          <th>id</th>
+          <th>title</th>
+          <th>price</th>
+          <th>taxes</th>
+          <th>ads</th>
+          <th>discount</th>
+          <th>total</th>
+          <th>update</th>
+          <th>delete</th>
+        </tr>
+        <tbody>
+          <tr>
+            <td>id</td>
+            <td>title</td>
+            <td>price</td>
+            <td>taxes</td>
+            <td>ads</td>
+            <td>discount</td>
+            <td>total</td>
+            <td><button id="update">update</button></td>
+            <td><button id="delete">delete</button></td>
+          </tr>
+          <tr>
+            <td>id</td>
+            <td>title</td>
+            <td>price</td>
+            <td>taxes</td>
+            <td>ads</td>
+            <td>discount</td>
+            <td>total</td>
+            <td><button id="update">update</button></td>
+            <td><button id="delete">delete</button></td>
+          </tr>
+          <tr>
+            <td>id</td>
+            <td>title</td>
+            <td>price</td>
+            <td>taxes</td>
+            <td>ads</td>
+            <td>discount</td>
+            <td>total</td>
+            <td><button id="update">update</button></td>
+            <th><button id="delete">delete</button></th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<script src="js/main.js"></script>
+</body>
+</html>
