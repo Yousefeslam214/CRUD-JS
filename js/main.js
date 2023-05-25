@@ -36,6 +36,7 @@ if(localStorage.product != null) {
 
 
 submit.onclick = function() {
+       // save localstorage
        let newPro = {
               title:title.value,
               price:price.value,
@@ -50,12 +51,26 @@ submit.onclick = function() {
        localStorage.setItem('product', JSON.stringify(dataPro)
        // because local storage take only json file
        )
-       console.log(newPro)
-       console.log(dataPro)
+
+       
+       // clear inputs
+
+
+       clearData()
+       function clearData() {
+              title.value = '';
+              price.value = '';
+              taxies.value = '';
+              ads.value = '';
+              discount.value = '';
+              total.innerHTML = '';
+              count.value ='';
+              category.value ='';
+       }
 }
 
-// save localstorage
-// clear inputs
+
+
 // read
 // count
 // delete
