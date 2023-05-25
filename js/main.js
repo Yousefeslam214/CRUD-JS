@@ -24,6 +24,36 @@ function getTotal() {
 }
 
 // create product
+
+
+let dataPro ;
+if(localStorage.product != null) {
+       dataPro = JSON.parse(localStorage.product)//converte json file to array to use it in js
+
+}else{
+       dataPro = [];
+}
+
+
+submit.onclick = function() {
+       let newPro = {
+              title:title.value,
+              price:price.value,
+              taxies:taxies.value,
+              ads:ads.value,
+              discount:discount.value,
+              total:total.value,
+              count:count.value,
+              category:category.value,
+       }
+       dataPro.push(newPro)
+       localStorage.setItem('product', JSON.stringify(dataPro)
+       // because local storage take only json file
+       )
+       console.log(newPro)
+       console.log(dataPro)
+}
+
 // save localstorage
 // clear inputs
 // read
