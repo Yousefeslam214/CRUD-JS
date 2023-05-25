@@ -130,6 +130,7 @@ button:hover{
   font-size: 15px;
 
 }
+
 #total::before {
   content: "total:";
 

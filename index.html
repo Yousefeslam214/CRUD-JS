@@ -27,11 +27,11 @@
     <div class="inputs">
       <input type="text" placeholder="title" id="title">
       <div class="price-fields">
-        <input type="number" placeholder="price" id="price">
-        <input type="number" placeholder="taxies" id="taxies">
-        <input type="number" placeholder="ads" id="ads">
-        <input type="number" placeholder="discount" id="discount">
-        <small id="total">231413</small>
+        <input onkeyup="getTotal()" type="number" placeholder="price" id="price">
+        <input onkeyup="getTotal()" type="number" placeholder="taxies" id="taxies">
+        <input onkeyup="getTotal()" type="number" placeholder="ads" id="ads">
+        <input onkeyup="getTotal()" type="number" placeholder="discount" id="discount">
+        <small id="total"></small>
       </div>
         <input type="number" id="count" placeholder="count">
         <input type="text" id="category" placeholder="category">
