@@ -49,7 +49,10 @@ submit.onclick = function() {
               category:category.value.toLowerCase(),
        }
        // count
-       if(mood=="create"){
+
+       // clean data
+       if(title.value != '' && price.value != '' && category.value != '' && newPro.count >=100){
+              if(mood=="create"){
               if (newPro.count > 1) {
                      for(let i =0; i < newPro.count;i++) {
                             dataPro.push(newPro)
@@ -57,9 +60,11 @@ submit.onclick = function() {
               } else{
                      dataPro.push(newPro)
               }
-       } else {
+              } else {
               dataPro[tmp]=newPro;
               mood = 'create'
+              }
+       clearData()
        }
 
        localStorage.setItem('product', JSON.stringify(dataPro)
@@ -80,7 +85,6 @@ submit.onclick = function() {
               category.value ='';
        }
        
-       clearData()
        showData()
 
 }
@@ -97,7 +101,7 @@ function showData() {
               tmp =i
               table +=`
               <tr>
-                     <td>${i}</td>
+                     <td>${i+1}</td>
                      <td>${dataPro[i].title}</td>
                      <td>${dataPro[i].price}</td>
                      <td>${dataPro[i].taxies}</td>
@@ -233,6 +237,5 @@ function searchData(value) {
 }
 
 
-// clean data
 
 
