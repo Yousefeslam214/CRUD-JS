@@ -10,7 +10,6 @@ let submit   = document.getElementById('create')
 
 
 // get total
-//let result = (+price.value + +taxies.value + +ads.value ) - +discount.value;
 
 function getTotal() {
        if (price.value != '') {
@@ -24,7 +23,6 @@ function getTotal() {
        }
 }
 
-//console.log(result)
 
 // create product
 
@@ -91,19 +89,39 @@ function showData() {
                      <td>${dataPro[i].discount}</td>
                      <td>${dataPro[i].total}</td>
                      <td>${dataPro[i].category}</td>
-                     <td><button id="update">update</button></td>
-                     <td><button id="delete">delete</button></td>
+                     <td><button onclick="deleteData(${i})" id="update">update</button></td>
+                     <td><button onclick="deleteData(${i})" id="delete">delete</button></td>
               </tr>
               `
        }
        document.getElementById('tbody').innerHTML = table;
+       let btnDelete = document.getElementById('deleteAll')
+       if (dataPro.length > 0) {
+              btnDelete.innerHTML = `
+              <button onclick="deleteAll">delete</button>
+              `
+       }else {
+              btnDelete.innerHTML= '';
+       }
 }
 
 
 showData()
 
+//delete
+function deleteData(i) {
+       dataPro.splice(i,1);
+       localStorage.product =JSON.stringify(dataPro);
+       showData()
+}
+
+
 // count
-// delete
+
+
+
 // update
 // search 
 // clean data
+
+
