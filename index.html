@@ -27,10 +27,10 @@
     <div class="inputs">
       <input type="text" placeholder="title" id="title">
       <div class="price-fields">
-        <input onkeyup="getTotal()" type="number" placeholder="price" id="price">
-        <input onkeyup="getTotal()" type="number" placeholder="taxies" id="taxies">
-        <input onkeyup="getTotal()" type="number" placeholder="ads" id="ads">
-        <input onkeyup="getTotal()" type="number" placeholder="discount" id="discount">
+        <input onChange="getTotal()" type="number" placeholder="price" id="price">
+        <input onChange="getTotal()" type="number" placeholder="taxies" id="taxies">
+        <input onChange="getTotal()" type="number" placeholder="ads" id="ads">
+        <input onChange="getTotal()" type="number" placeholder="discount" id="discount">
         <small id="total"></small>
       </div>
         <input type="number" id="count" placeholder="count">
@@ -39,10 +39,10 @@
     </div>
     <div class="outputs">
       <div class="searchBox">
-        <input type="text" id="search" placeholder="search">
+        <input onkeyup="searchData(this.value)" type="text" id="search" placeholder="search">
         <div class="btnSearch">
-          <button id="searchTitle">Search By Title</button>
-          <button id="searchCategory">Search By Category</button>
+          <button onclick="getSearchMood(this.id)" id="searchTitle">Search By Title</button>
+          <button onclick="getSearchMood(this.id)" id="searchCategory">Search By Category</button>
         </div>
       </div>
       <div id="deleteAll"></div>
