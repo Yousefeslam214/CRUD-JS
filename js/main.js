@@ -10,7 +10,8 @@ let submit   = document.getElementById('create')
 
 
 // get total
-let result = (+price.value + +taxies.value + +ads.value ) - +discount.value;
+//let result = (+price.value + +taxies.value + +ads.value ) - +discount.value;
+
 function getTotal() {
        if (price.value != '') {
               let result = (+price.value + +taxies.value + +ads.value ) - +discount.value;
@@ -23,8 +24,9 @@ function getTotal() {
        }
 }
 
-// create product
+//console.log(result)
 
+// create product
 
 let dataPro ;
 if(localStorage.product != null) {
@@ -43,7 +45,7 @@ submit.onclick = function() {
               taxies:taxies.value,
               ads:ads.value,
               discount:discount.value,
-              total:total.value,
+              total:total.innerHTML,
               count:count.value,
               category:category.value,
        }
@@ -56,7 +58,7 @@ submit.onclick = function() {
        // clear inputs
 
 
-       clearData()
+       
        function clearData() {
               title.value = '';
               price.value = '';
@@ -67,11 +69,39 @@ submit.onclick = function() {
               count.value ='';
               category.value ='';
        }
+       
+       clearData()
+       showData()
+
 }
 
 
-
 // read
+
+function showData() {
+       let table = '';
+       for(let i =0 ;i < dataPro.length;i++) {
+              table +=`
+              <tr>
+                     <td>${i}</td>
+                     <td>${dataPro[i].title}</td>
+                     <td>${dataPro[i].price}</td>
+                     <td>${dataPro[i].taxies}</td>
+                     <td>${dataPro[i].ads}</td>
+                     <td>${dataPro[i].discount}</td>
+                     <td>${dataPro[i].total}</td>
+                     <td>${dataPro[i].category}</td>
+                     <td><button id="update">update</button></td>
+                     <td><button id="delete">delete</button></td>
+              </tr>
+              `
+       }
+       document.getElementById('tbody').innerHTML = table;
+}
+
+
+showData()
+
 // count
 // delete
 // update
